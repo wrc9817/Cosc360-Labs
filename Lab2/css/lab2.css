@@ -3,30 +3,38 @@ footer {
   color: white;
   background-color: #daad86;
   margin: 0em 4em 0.5em 4em;
+  padding: 0.6em;
 }
 
-h1{
+h1 {
   font-family: Trebuchet MS;
   font-size: 1.5em;
-
 }
-h2{
+
+h2 {
   font-family: Trebuchet MS;
   font-size: 0.75em;
-} 
-h3 {
- font-family: Trebuchet MS;
- font-size: 1.125em;
 }
 
-nav{
+h3 {
+  font-family: Trebuchet MS;
+  font-size: 1.125em;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: black;
+  margin-right: 1em;
+}
+
+nav {
   font-family: Lucida Grande;
   font-size: 1.125em;
 }
-#nav ul{
+
+#nav ul {
   list-style: none;
 }
-#nav li{
+
+#nav li {
   display: inline;
   margin-right: 10px;
 }
@@ -39,63 +47,85 @@ footer {
 header {
   background-color: #312c32;
 }
+
 body {
   font-family: Georgia, Cambria, "Times New Roman", serif;
   font-size: 100%;
   background-color: #98dafc;
 }
+
+#container {
+  background-color: white;
+  margin: 0em 4em 0.5em 4em;
+  padding-left: 0.6em;
+  line-height: 1.5em;
+}
+
 a.link:link {
-  color:#98dafc;
+  color: #98dafc;
   font-weight: bold;
 }
+
 a.link:visited {
-  color:#daad86;
+  color: #daad86;
 }
+
 a.link:hover {
-  background-color: #FFFFCC;
+  background-color: #ffffcc;
 }
 
 #large_image {
-  border:solid #DAAD86;
-  padding: 0.25em;
   width: 98%;
+  border: solid black;
+  border-width: 0.05em;
+  padding: 0.25em;
 }
 
-.socialmedia{
+.socialmedia {
   background-image: url(../images/gray-gradient.png);
+  padding-left: 1em;
   border-radius: 5px;
   height: 50px;
-  vertical-align:auto;
+  border: 3px darkgray;
+  margin-right:1%;
 }
 
 span.share {
   display: inline-block;
-  font-size: inherit*70%;
+  font-size: inherit * 70%;
 }
 
-span.icons{
-display: inline-block;
-padding: 10px;
-padding-right: 0px;
-padding-left: 0px;
-}
-span.glyphicon{
+span.icons {
   display: inline-block;
-padding: 10px;
-padding-right: 0px;
-padding-left: 0px;
+  padding: 10px;
+  padding-right: 0px;
+  padding-left: 0px;
 }
-.byline{
-  border-top-style: solid;
-  border-top-width: 1px;
-  padding-top:50px;
+
+span.glyphicon {
+  display: inline-block;
+  padding: 10px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.byline {
   margin-top: 0%;
   font-style: italic;
-  color:cadetblue;
+  color: cadetblue;
 }
 
 p.comment {
-  border-bottom-style:dotted;
-  border-top-width: 0.2px;
-  padding-bottom: 2px;
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+  border-color: black;
+  margin-right: 1em;
+}
+
+hr{
+  margin-right: 1em;
+}
+
+p#copyright {
+  font-style: italic;
 }
