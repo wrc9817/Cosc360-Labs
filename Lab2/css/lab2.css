@@ -4,6 +4,7 @@ footer {
   background-color: #daad86;
   margin: 0em 4em 0.5em 4em;
   padding: 0.6em;
+  line-height: 1.5em;
 }
 
 h1 {
@@ -23,6 +24,7 @@ h3 {
   border-bottom-width: 1px;
   border-color: black;
   margin-right: 1em;
+  margin-bottom:1em;
 }
 
 nav {
@@ -88,6 +90,7 @@ a.link:hover {
   height: 50px;
   border: 3px darkgray;
   margin-right:1%;
+  margin-bottom:1em;
 }
 
 span.share {
@@ -120,6 +123,7 @@ p.comment {
   border-bottom-width: 1px;
   border-color: black;
   margin-right: 1em;
+  margin-bottom: 2em;
 }
 
 hr{
@@ -128,4 +132,8 @@ hr{
 
 p#copyright {
   font-style: italic;
+}
+
+#related_photos {
+  margin-bottom: 1em;
 }

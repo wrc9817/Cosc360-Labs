@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>COSC 360 - Lab3</title>
+  <link rel="stylesheet" href="css/lab3.css">
+</head>
+
+<body>
+  <table>
+    <caption> February 2021</caption>
+    <thead>
+      <tr>
+        <th>S</th>
+        <th>M</th>
+        <th>T</th>
+        <th>W</th>
+        <th>T</th>
+        <th>F</th>
+        <th>S</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&nbsp;</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td><a href="#">7</a></td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td id="today">12</td>
+        <td>13</td>
+      </tr>
+      <tr>
+        <td><a href="#">14</a></td>
+        <td>15</td>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+        <td>19</td>
+        <td>20</td>
+      </tr>
+      <tr>
+        <td><a href="#">21</a></td>
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+      </tr>
+      <tr>
+        <td><a href="#">28</a></td>
+        <td colspan="6">&nbsp;</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td id="prev" colspan="3"><a href="#">&#8678; January</a></td>
+        <td>&nbsp;</td>
+        <td id="next" colspan="3"><a href="#">March &#8680;</a></td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <form method="POST" action="http://www.randyconnolly.com/tests/process.php">
+    <fieldset>
+      <legend>Meeting Details</legend>
+      <p>
+        <label>Client Name:</label>
+        <input type="text" name="client">
+      </p>
+      <p>
+        <label>First Meeting? </label>
+        <input type="checkbox" name="first">
+      </p>
+      <p>
+        <label>Client Type:</label>
+        <input type="radio" name="type" value="1"> School
+        <input type="radio" name="type" value="2"> College
+        <input type="radio" name="type" value="3"> University
+      </p>
+      <p>
+        <label>Meetting Data:</label>
+        <input type="date" name="date">
+      </p>
+      <input type="submit">
+      <input type="reset">
+    </fieldset>
+  </form>
+</body>
+
+</html>
