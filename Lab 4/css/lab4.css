@@ -23,7 +23,13 @@ header{
   margin-right: 5em;
   margin-bottom: 2em;
   background-color: #F5F5F5;
- }
+}
+
+#masthead h1{
+  height: 45px;
+  position: relative;
+  top:15%;
+}
 
 #right-sidebar{
   float: left;
