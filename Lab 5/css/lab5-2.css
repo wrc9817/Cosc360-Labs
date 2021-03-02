@@ -1,0 +1,51 @@
+#today {
+  background-color: lightblue;
+  color: white;
+}
+table {
+  border-spacing: 2pt;
+  margin-bottom: 10pt;
+  margin-left: auto;
+  margin-right: auto;
+}
+td{
+  background-color: whitesmoke;
+  padding: 5pt;
+}
+caption {
+  background-color: lightseagreen;
+  padding: 5pt;
+}
+tbody a{
+  color:lightseagreen;
+}
+
+td:hover:not(#prev,#next){
+  background-color: red;
+ }
+
+ th {
+    background-color: whitesmoke;
+   height: 0.6em;
+   font-size:10px;
+ }
+
+ form {
+   background-color: burlywood;
+   padding: 5pt;
+   width: 50%;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ #prev {
+  text-align: left;
+}
+
+ #next {
+   text-align: right;
+ }
+
+ tfoot a {
+   color:gray;
+ }
