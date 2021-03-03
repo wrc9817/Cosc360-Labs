@@ -1,5 +1,5 @@
 window.addEventListener('load', function(){
-  var main = document.getElementsByTagName('form')[0];
+  var main = document.getElementsByTagName("form")[0];
   var title = document.getElementsByName("title")[0];
   var desc = document.getElementsByName("description")[0];
   var license = document.getElementsByName("accept")[0];
