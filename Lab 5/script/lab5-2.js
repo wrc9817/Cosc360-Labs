@@ -9,7 +9,6 @@ window.addEventListener('load',function(){
       setStyle(child);
       child.addEventListener('click', function(){
         alert("TagName: " + tag + " ID: " + node.id + " InnerHTML: "+ node.innerHTML);
-        console.log(tag);
       });
     }
   });
