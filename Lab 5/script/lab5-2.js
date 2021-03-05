@@ -8,6 +8,9 @@ window.addEventListener('load',function(){
       node.appendChild(child);
       setStyle(child);
       child.addEventListener('click', function(){
+        if(node.id==""){
+          node.id = "none";
+        }
         alert("TagName: " + tag + " ID: " + node.id + " InnerHTML: "+ node.innerHTML);
       });
     }
@@ -15,6 +18,7 @@ window.addEventListener('load',function(){
 })
 
 function setStyle(e){
+  e.style.color = "black";
   e.style.border = "solid black";
   e.style.borderWidth = "1px";
   e.style.display = "inline";

@@ -3,6 +3,7 @@ window.addEventListener('load', function(){
   var title = document.getElementsByName("title")[0];
   var desc = document.getElementsByName("description")[0];
   var license = document.getElementsByName("accept")[0];
+  var rect = document.getElementsByClassName("rectangle")[0];
   main.addEventListener('submit', function(e){
     if(title.value == "" || desc.value =="" ||license.checked == false){
     if(title.value == ""){
@@ -12,7 +13,7 @@ window.addEventListener('load', function(){
       highlight(desc);
     }
     if(license.checked == false){
-      highlight(license);
+      highlight(rect);
     }
     e.preventDefault();
     alert("please fill the required fields");
@@ -30,7 +31,7 @@ window.addEventListener('load', function(){
   });
   license.addEventListener('change',function(){
     if(license == true){
-      cleanHighlight(license);
+      cleanHighlight(rect);
     }
   });
   
