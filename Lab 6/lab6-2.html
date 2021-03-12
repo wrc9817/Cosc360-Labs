@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
+
 <body>
   <p>A script on this page starts this clock:</p>
 
@@ -11,91 +13,107 @@
   <p id="time_two"></p>
 
   <!-- Add button and table here -->
-  <button type ="button" onClick = clickhandle()>Get City Info</button>
-  <table>
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>name</th>
-      <th>iso</th>
-      <th>latitude</th>
-      <th>longitude</th>
-      <th>population</th>
-      <th>elevation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td id = "id"></td>
-      <td id = "name"></td>
-      <td id = "iso"></td>
-      <td id = "latitude"></td>
-      <td id = "longitude"></td>
-      <td id = "population"></td>
-      <td id = "elevation"></td>
-
-    </tr>
-  </tbody>
-  </table>
 
 
   <script>
-  //set interval timers to trigger the refresh.  Here the callback function will
-  //be called when the timer fires
-  var var1 = setInterval(timer1, 1000);
-  var var2 = setInterval(timer2, 1000);
-  var var3 = setInterval(timer3,1000);
-  var count = 0;
-  //this is the callback function that will be run when timer1 runs.  Just pulls local time
-  function timer1() {
+    //set interval timers to trigger the refresh.  Here the callback function will
+    //be called when the timer fires
+    var var1 = setInterval(timer1, 1000);
+    var var2 = setInterval(timer2, 1000);
+
+    $(function(){
+      var button = $('<button type="button">Get City Info</button>');
+      $('body').append(button);
+    
+    $('button').on('click', function () {
+      var table = $('<table><thead><tr><th>id</th><th>name</th><th>iso</th><th>latitude</th><th>longitude</th><th>population</th><th>elevation</th></tr></thead><tbody id = "main"></tbody></table>');
+      table.css({
+        textAlign: 'left',
+        border:'1px solid black',
+      });
+      $('body').append(table);
+      $('th').css({
+        border:'1px solid black',
+      });
+      var result = $.get("http://www.randyconnolly.com/funwebdev/services/travel/cities.php");
+      result.done(function (data) {
+        data.forEach(e => {
+          var row = $('<tr></tr>');
+          // id append
+          var t1 = $('<td></td>');
+          if (e.id == "") {
+            t1.html('none');
+          } else {
+            t1.html(e.id);
+          }
+          row.append(t1);
+          // name
+          var t2 = $('<td></td>');
+          t2.html(e.name);
+          row.append(t2);
+          //iso
+          var t3 = $('<td></td>');
+          t3.html(e.iso);
+          row.append(t3);
+          // latitude
+          var t4 = $('<td></td>');
+          t4.html(e.latitude);
+          row.append(t4);
+          //longitude
+          var t5 = $('<td></td>');
+          t5.html(e.longitude);
+          row.append(t5);
+          //population
+          var t6 = $('<td></td>');
+          t6.html(e.population);
+          row.append(t6);
+          //elevation
+          var t7 = $('<td></td>');
+          t7.html(e.elevation);
+          row.append(t7);
+          $('td,tr')
+            .css({
+              border:'1px solid black',
+            });
+          $('#main').append(row);
+        });
+      });
+      results.fail(function (jqXHR) {
+        $('table').remove();
+        var p = $('<p></p>');
+        p.html("Error: " + jqXHR.status); 
+        $('body').append(p);
+      });
+      results.always(function () { console.log("done"); });
+    });
+  });
+
+    //this is the callback function that will be run when timer1 runs.  Just pulls local time
+    function timer1() {
       var d = new Date();
       //Vanilla JS
       //document.getElementById("time_one").innerHTML = d.toLocaleTimeString();
       //jQuery
       $("#time_one").html("From local system: " + d.toLocaleTimeString());
-  }
+    }
 
-  //this is the callback function that will be run when timer2 runs.
-  //This will contact the server at the specified url and wait for the data
-  //In this case time.jsontest.com just sends the time back as JSON but you could
-  //use this to pull data from a database or other data source.
-  function timer2() {
+    //this is the callback function that will be run when timer2 runs.
+    //This will contact the server at the specified url and wait for the data
+    //In this case time.jsontest.com just sends the time back as JSON but you could
+    //use this to pull data from a database or other data source.
+    function timer2() {
       var results = $.get("http://time.jsontest.com/");
-      results.done(function(data) {
-                            console.log(data);
-                            //Vanilla JS
-                            //document.getElementById("time_two").innerHTML = data.time;
-                            //jQuery
-                            $("#time_two").html("Remote server time: " + data.time);
-                              });
-      results.fail(function(jqXHR) {console.log("Error: " + jqXHR.status);});
-      results.always(function() {console.log("done");});
-  }
-  function timer3(){
-    var result = $.get("http://www.randyconnolly.com/funwebdev/services/travel/cities.php");
-    result.done(function(data){
-      if(count>=data.length){
-        count = 0;
-      }
-      if(data[count].id==""){
-        $('#id').text('none');
-      }else{
-        $('#id').text(data[count].id);
-      }
-      $('#name').text(data[count].name);
-      $('#iso').text(data[count].iso);
-      $('#latitude').text(data[count].latitude);
-      $('#longitude').text(data[count].longitude);
-      $('#population').text(data[count].population);
-      $('#elevation').text(data[count].elevation);
-    });
-    results.fail(function(jqXHR) {console.log("Error: " + jqXHR.status);});
-    results.always(function() {console.log("done");});
-
-  }
-  function clickhandle(){
-    count = count + 1;
-  }
+      results.done(function (data) {
+        console.log(data);
+        //Vanilla JS
+        //document.getElementById("time_two").innerHTML = data.time;
+        //jQuery
+        $("#time_two").html("Remote server time: " + data.time);
+      });
+      results.fail(function (jqXHR) { console.log("Error: " + jqXHR.status); });
+      results.always(function () { console.log("done"); });
+    }
   </script>
-  </body>
+</body>
+
 </html>
